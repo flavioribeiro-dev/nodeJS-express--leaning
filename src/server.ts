@@ -1,6 +1,10 @@
 import Express from 'express';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const app = Express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.get('/', (req, res) => {
     res.send('página inicial')
@@ -35,7 +39,13 @@ app.get('/arrayObjetos', (req, res) => {
     res.json(carros);
 })
 
+app.get('/html', (req, res) => {
+    res.sendFile(path.join(__dirname, "assets", "pagina.html"))
+})
 
+app.get('/pdf', (req, res) => {
+    res.sendFile(path.join(__dirname, "assets", "exemplo-arquivo.pdf"));
+})
 
 app.listen( 3000, () => {
     console.log('servidor rodando')
