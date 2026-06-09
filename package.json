@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-express--leaning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tsx --watch ./src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flavioribeiro-dev/nodeJS-express--leaning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/flavioribeiro-dev/nodeJS-express--leaning/issues"
+  },
+  "homepage": "https://github.com/flavioribeiro-dev/nodeJS-express--leaning#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.9.2",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
