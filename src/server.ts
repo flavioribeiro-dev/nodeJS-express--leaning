@@ -6,6 +6,15 @@ const app = Express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+
+// Middleware - são funções específicas (como uma "linha de montagem") ~ todas as requisições são middlewares
+app.use( (req, res, next) => {
+    console.log(`Data: ${Date.now()}`);
+    next();
+} )
+// o parâmetro NEXT é responsável por executar (automaticamente) o próximo Middleware
+
+
 app.get('/', (req, res) => {
     res.send('página inicial')
 })
