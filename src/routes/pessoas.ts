@@ -27,5 +27,17 @@ router.post('/', (req, res) => {
     pessoas.push(novaPessoa);
     res.status(201).send(pessoas)
 })
+router.delete('/:id', (req, res) => {
+    const id = +req.params.id;
+    let dadosAtualizados = pessoas.filter( (pessoa, i) => i !== id );
+    if(dadosAtualizados.length === pessoas.length) {
+        res.status(406).send(pessoas);
+    } else {
+        pessoas = [...dadosAtualizados];
+        res.status(200).send(pessoas);
+    }
+    console.log(pessoas);
+    return
+})
 
 export default router;
