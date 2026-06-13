@@ -2,15 +2,6 @@ import Express from 'express';
 
 const app = Express();
 
-
-// Middleware - são funções específicas (como uma "linha de montagem") ~ todas as requisições são middlewares
-app.use( (req, res, next) => {
-    console.log(`Data: ${Date.now()}`);
-    next();
-} )
-// o parâmetro NEXT é responsável por executar (automaticamente) o próximo Middleware
-
-
 app.get('/', (req, res) => {
     res.send('página inicial')
 })
