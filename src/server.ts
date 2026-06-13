@@ -7,6 +7,9 @@ const app = Express();
 app.use(RotasBasico);
 app.use(RotasOutrosRetornos);
 
+
+
+
 app.listen( 3000, () => {
     console.log('servidor rodando')
 } )
