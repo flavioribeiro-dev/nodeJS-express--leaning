@@ -36,7 +36,6 @@ router.delete('/:id', (req, res) => {
         pessoas = [...dadosAtualizados];
         res.status(200).send(pessoas);
     }
-    console.log(pessoas);
     return
 })
 
