@@ -7,8 +7,6 @@ import RotasFrutas from './routes/parametros-de-rota.js'
 import RotasCores from './routes/parametros-de-query.js';
 import RotaPessoas from './routes/pessoas.js';
 
-import RotasPessoas2 from './routes/pessoas2.js';
-
 const app = Express();
 app.use(Express.urlencoded({ extended: true }));
 
@@ -19,8 +17,6 @@ app.use(RotasStatus);
 app.use(RotasFrutas)
 app.use(RotasCores);
 app.use('/pessoas', RotaPessoas);
-
-app.use('/pessoas2', RotasPessoas2);
 
 app.listen( 3000, () => {
     console.log('servidor rodando')

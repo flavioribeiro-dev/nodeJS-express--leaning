@@ -27,30 +27,6 @@ router.post('/', (req, res) => {
     pessoas.push(novaPessoa);
     res.status(201).send(pessoas)
 })
-
-router.put('/:id', (req, res) => {
-    const id = +req.params.id;
-    const dadosAtualizados = req.body;
-    if(id>=0 && id<pessoas.length) {
-        if(dadosAtualizados.nome) {
-            pessoas[id].nome = dadosAtualizados.nome;
-        }
-    }
-
-
-
-    // console.log(id, dadosAtualizados);
-
-    // const id = +req.params.id;
-    // const dadosAtualizados = req.body;
-    // if(id>=0 && id<pessoas.length) {
-    //     if(dadosAtualizados.nome) {
-    //         pessoas[id].nome = dadosAtualizados.nome;
-    //     }
-    // } else {
-    //     res.status(406).send(pessoas)
-    // }
-})
 router.delete('/:id', (req, res) => {
     const id = +req.params.id;
     let dadosAtualizados = pessoas.filter( (pessoa, i) => i !== id );
@@ -60,7 +36,6 @@ router.delete('/:id', (req, res) => {
         pessoas = [...dadosAtualizados];
         res.status(200).send(pessoas);
     }
-    console.log(pessoas);
     return
 })
 
